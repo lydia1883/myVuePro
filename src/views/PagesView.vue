@@ -8,28 +8,27 @@
 </template>
 
 <script>
-    
-    import HeaderBar from '../components/HeaderBar';
-    import TalionView from '../views/TalionView';
+  import HeaderBar from "../components/HeaderBar";
+  import TalionView from "../views/TalionView";
 
-    export default {
-        name: 'pages-view',
-        components: { HeaderBar , TalionView },
-        data () {
-            return {
-                talion: ''
-            }
-        },
-        methods: {
-            open: function (){
-                this.talion = 'open'
-            },
-            close: function (){
-                this.talion = ''
-            }
-        }
+  export default {
+    name: "pages-view",
+    components: { HeaderBar, TalionView },
+    data() {
+      return {
+        talion: ""
+      };
+    },
+    methods: {
+      open: function() {
+        console.log("把talion打开了")
+        this.talion = "open";
+      },
+      close: function() {
+        this.talion = false;
+      }
     }
-
+  };
 </script>
 
 <style scoped>

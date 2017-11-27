@@ -13,7 +13,10 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "normalize.css": "^7.0.0",
+    "superagent-jsonp": "^0.1.2",
     "vue": "^2.5.2",
+    "vue-infinite-loading": "^2.2.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -65,10 +68,12 @@
     "shelljs": "^0.7.6",
     "sinon": "^4.0.0",
     "sinon-chai": "^2.8.0",
+    "superagent": "^3.8.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
+    "vuex": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
