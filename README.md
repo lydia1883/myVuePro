@@ -1,5 +1,4 @@
 # my-vue-pro
-> vue pro
 > An exercise program for Vue
 
 
