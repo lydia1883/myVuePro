@@ -3,8 +3,8 @@ const state = {
 	login_email: '',
 	login_token: '',
 	login_name: '',
-	temp_email: '',
-	temp_token: '',
+	temp_email: '1',
+	temp_token: '2',
 	temp_name: ''
 }
 
@@ -65,7 +65,6 @@ const actions = {
 	*/
 	login({ commit }, payload) {
 		return new Promise((resolve, reject) => {
-
 			request
 				.get('https://douban.herokuapp.com/user/' + payload.email)
 				.set('Authorization', 'Bearer ' + payload.token)
@@ -75,9 +74,11 @@ const actions = {
 						email: res.body.email,
 						token: res.body.token,
 						name: res.body.name
-					})
+					});
+					resolve(res)
+				}, err => {
+					reject(err)
 				})
-
 		})
 	},
 	/**

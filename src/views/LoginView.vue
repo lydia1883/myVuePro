@@ -75,11 +75,11 @@
 					isDisabled: false,
 					isShow: 0,
 					passType: 'password',
-					error:''
+          error:'',
 				}
 			},
 			computed: {
-				...mapState ({
+				...mapState({
 						email: state => state.user.temp_email,
 						token: state => state.user.temp_token
 				})
@@ -98,9 +98,52 @@
 				},
 				beforeSubmit: function(){
 					this.isDisabled = true
-					this.loginState = "正在登录。。。"
-				}
-			}
+					this.loginState = "正在登录..."
+        },
+        onSuccess: function(res){
+          this.$router.push({name: 'StatusView'})
+        },
+        onError: function (err) {
+          this.error = err.body.error;
+          this.loginState = '登录'
+          this.isDisabled = false
+        },
+        onSubmit: function () {
+          this.beforeSubmit();
+
+          this.$store.dispatch({
+            type: 'login',
+            email: this.email,
+            token: this.token
+          }).then(res => {
+            // Success handle
+            console.log(res,"res");
+            this.onSuccess(res)
+          }, err => {
+            // Error handle
+            this.onError(err)
+          })
+        },
+        
+      },
+      beforeRouteEnter (to, from, next) {
+        next(vm => {
+          if (vm.$store.getters.currentUser.email) {
+            // next({ path: '/' })
+            vm.$router.push({name:'StatusView'})
+          } else {
+            next()
+          }
+        })
+      },
+      created () {
+        // Getting local user automatic filling
+        if (localStorage.getItem('email')) {
+          this.$store.commit({
+            type: 'getLocalUser'
+          })
+        }
+      }
     }
 </script>
 

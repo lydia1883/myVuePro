@@ -6,7 +6,7 @@
 				<p class="tip">请复制以下Token进行登陆</p>
 				<div class="form-alias">
 					<label>
-						<strong>tokens</strong>
+						<strong>token</strong>
 						<input 
 						v-model="token"
 						type="text"
@@ -16,7 +16,7 @@
 					</label>
 				</div>
 				<div class="form-submit">
-					<router-link class="submit" :to="{ name: 'LoginView' }" tag="button">
+					<router-link class="submit" :to="{name: 'LoginView'}" tag="button">
 						去登录
 					</router-link>
 				</div>
@@ -25,7 +25,7 @@
 
 		<template v-else>
 			<h1 class="title">欢迎加入豆瓣</h1>
-			<form action="" method="post" @submit.prevent="onSubmit()">
+			<form method="post" @submit.prevent="onSubmit()">
 				<p v-if="error" class="tip error">{{error}}</p>
 				<div class="form-alias">
 					<label for="">
@@ -146,6 +146,7 @@ export default {
   // Checkout current user
   beforeRouteEnter (to, from, next) {
     next(vm => {
+      console.log(vm.$store.getters,vm.$store.getters.currentUser.email)
       if (vm.$store.getters.currentUser.email) {
         // next({ path: '/' })
         vm.$router.push({name: 'StatusView'})
