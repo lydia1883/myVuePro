@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import PagesView from '../views/PagesView'
+import MovieView from '../views/MovieView'
 import LoginView from '../views/LoginView'
 import StatusView from '../views/StatusView'
 import HomeView from '../views/HomeView'
@@ -27,6 +28,11 @@ export default new Router({
           path: 'home',
           name: 'HomeView',
           component: HomeView
+        },
+        {
+          path: 'movie',
+          name: 'MovieView',
+          component: MovieView
         },
         {
           path: 'status',

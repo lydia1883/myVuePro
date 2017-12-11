@@ -22,7 +22,7 @@ export default {
     components: { Banner , UserBar , Card ,DownloadApp  },
     data () {
 			return {
-					items: new Array(10)
+				items: new Array(10)
 			}
     }
 }
