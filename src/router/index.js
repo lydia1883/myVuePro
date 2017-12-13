@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import PagesView from '../views/PagesView'
+import GroupView from '../views/GroupView'
+import BookView from '../views/BookView'
 import MovieView from '../views/MovieView'
 import LoginView from '../views/LoginView'
 import StatusView from '../views/StatusView'
@@ -33,6 +35,16 @@ export default new Router({
           path: 'movie',
           name: 'MovieView',
           component: MovieView
+        },
+        {
+          path: 'book',
+          name: 'BookView',
+          component: BookView
+        },
+        {
+          path: 'group',
+          name: 'GroupView',
+          component: GroupView
         },
         {
           path: 'status',

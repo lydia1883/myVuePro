@@ -4,7 +4,7 @@
 		<scroller title="免费在线观影" type="hasCover" :items="topMovies"></scroller>
 		<scroller title="新片速递" type="hasCover" :items="newMovies"></scroller>
 		<scroller title="发现好电影" type="onlyString" :items="movieTags"></scroller>
-		<!-- <types></types> -->
+		<types></types>
 		<download-app></download-app>
 	</div>
 </template>
