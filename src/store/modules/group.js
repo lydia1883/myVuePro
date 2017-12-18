@@ -68,7 +68,7 @@ const actions = {
           time: '刚刚更新：'
         }
       }
-    ]
+    ];
     let dataB = [
       {
         title: '想不想很多人帮你！',
@@ -109,7 +109,7 @@ const actions = {
           time: '3分钟前更新：'
         }
       }
-    ]
+    ];
     let dataC = [
       {
         title: '我爱代购&amp;海淘☺微信号',
@@ -150,7 +150,7 @@ const actions = {
           time: '3分钟前更新：'
         }
       }
-		]
+		];
 		
 		// Simulate time out
     setTimeout(() => {

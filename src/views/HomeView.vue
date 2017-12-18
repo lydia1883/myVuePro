@@ -3,7 +3,7 @@
 		<sub-nav mold="quickNav"></sub-nav>
 		<!-- <user-bar></user-bar> -->
 		<list mold="thumbnail" :items="events"></list>
-		<infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
+		<infinite-loading @infinite="onInfinite" ref="infiniteLoading">
 			<loading slot="spinner"></loading>
 		</infinite-loading>
 	</div>
@@ -31,7 +31,7 @@
 		},
 		methods: {
 			onInfinite () {
-				setTimeout(()=>{
+				setTimeout(() => {
 					this.loadMore();
 					this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
 				},1000)

@@ -97,12 +97,12 @@
        */
       goSearch: function (){
         this.$emit('closeTalion');
-        // this.router.push({
-        //   name: 'SearchView',
-        //   params: {
-        //     q: this.queryStr
-        //   }
-        // })
+        this.$router.push({
+          name: 'SearchView',
+          params: {
+            q: this.queryStr
+          }
+        })
       }
     }
   }
